@@ -20,6 +20,16 @@ variable "nat" {
     enterpriseProjectID = optional(string, "0")
     tags                = map(any)
 
+    snatRules = map(object({
+      region       = optional(string, "ap-southeast-2")
+      natGatewayID = optional(string, "")
+      sourceType   = optional(string, "0") # 0 is VPC scenario, 1 is Direct Connect scenario
+      subnetID     = optional(string, "")
+      cidr         = optional(string, "")
+      description  = optional(string, "Created by Terraform")
+
+    }))
+
   }))
 
 }
