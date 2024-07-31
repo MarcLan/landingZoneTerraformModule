@@ -21,14 +21,14 @@ terraform {
 provider "huaweicloud" {
   region     = "ap-southeast-2" # The region ap-bangkok
 
-  access_key = "NTI6GCSI7NG8EORBA5IL"
-  secret_key = "dqKM5WwjkVjAn4bFgsdIaSvUNUPblXm9j7KSaG18"
+  # access_key = "NTI6GCSI7NG8EORBA5IL"
+  # secret_key = "dqKM5WwjkVjAn4bFgsdIaSvUNUPblXm9j7KSaG18"
 
     assume_role {
     agency_name = "terraformRole"
     domain_name = "hwc-awc-core-network"
   }
 
-  # access_key = "SGJXXLWDW8E1V4GYQI73"
-  # secret_key = "pR03dkNMUI0XS21cmXH6dj9mEWP4RZlH52VMAO3q"
+  access_key = "SGJXXLWDW8E1V4GYQI73"
+  secret_key = "pR03dkNMUI0XS21cmXH6dj9mEWP4RZlH52VMAO3q"
 }
