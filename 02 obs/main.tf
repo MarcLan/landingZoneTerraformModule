@@ -9,4 +9,5 @@ resource "huaweicloud_obs_bucket" "this" {
   sse_algorithm = each.value.encryption
   kms_key_id    = each.value.kmsKeyID
   multi_az      = each.value.multiAZ
+  force_destroy = true
 }

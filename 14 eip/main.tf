@@ -2,7 +2,7 @@
 # Create EIP
 ######################################################################
 resource "huaweicloud_vpc_eip" "this" {
-  for_each = var.eip
+  for_each = var.EIP
 
   publicip {
     type = each.value.type
@@ -12,7 +12,7 @@ resource "huaweicloud_vpc_eip" "this" {
     share_type  = each.value.shareType
     name        = each.value.name
     size        = each.value.size
-    charge_mode = each.value.shareType
+    charge_mode = each.value.chargeMode
   }
 
 }

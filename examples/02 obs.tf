@@ -7,7 +7,7 @@ module "obs" {
       multiAZ         = true
       acl             = "private"
       encryption      = "kms"
-      kmsKeyID        = module.kms.kmsKeyIDs["kms2"]
+      kmsKeyID        = module.kms.kmsKeyIDs["kms3"]
     }
   }
 }

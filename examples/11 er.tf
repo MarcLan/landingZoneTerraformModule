@@ -12,12 +12,12 @@ module "er" {
         "attachment1" = {
           attachmentName = "attachment-1"
           vpcID          = module.vpc.vpcIDs["vpc1"]
-          subnetID       = module.vpc.subnetIDds["vpc1.subnet1"]
+          subnetID       = module.vpc.subnetIDs["vpc1.subnet1"]
         }
         "attachment2" = {
           attachmentName = "attachment-2"
           vpcID          = module.vpc.vpcIDs["vpc2"]
-          subnetID       = module.vpc.subnetIDds["vpc2.subnet1"]
+          subnetID       = module.vpc.subnetIDs["vpc2.subnet1"]
         }
       }
 

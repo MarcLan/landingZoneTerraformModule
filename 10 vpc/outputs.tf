@@ -15,7 +15,7 @@ output "vpcCIDR" {
   }
 }
 
-output "subnetIDds" {
+output "subnetIDs" {
   description = "Out put subnets IDs for other resources"
   value = {
     for k, v in huaweicloud_vpc_subnet.this : k => v.id
