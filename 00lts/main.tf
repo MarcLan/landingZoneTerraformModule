@@ -3,7 +3,7 @@
 ######################################################################
 
 resource "huaweicloud_lts_group" "this" {
-  for_each    = var.LTSs
+  for_each    = var.lts
   group_name  = each.value.groupName
   ttl_in_days = each.value.groupTTL
 }
@@ -24,7 +24,7 @@ resource "huaweicloud_lts_stream" "this" {
 
 locals {
   lts = flatten([
-    for groupKey, groupValue in var.LTSs : [
+    for groupKey, groupValue in var.lts : [
       for streamKey, streamValue in groupValue.streams : {
         groupKey   = groupKey
         streamKey  = streamKey

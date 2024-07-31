@@ -2,7 +2,7 @@
 # Create multiple VPCs with multiple subnets
 ######################################################################
 resource "huaweicloud_vpc" "this" {
-  for_each              = var.VPCs
+  for_each              = var.vpc
   name                  = each.value.vpcName
   cidr                  = each.value.vpcCIDR
   enterprise_project_id = each.value.vpcEnterpriseProject
@@ -26,7 +26,7 @@ resource "huaweicloud_vpc_subnet" "this" {
 # Create multiple VPC Flow Logs in VPC
 ######################################################################
 resource "huaweicloud_vpc_flow_log" "this" {
-  for_each      = var.VPCs
+  for_each      = var.vpc
   name          = each.value.flowLogType
   resource_id   = huaweicloud_vpc.this[each.key].id
   resource_type = each.value.flowLogType
@@ -50,7 +50,7 @@ resource "huaweicloud_vpc_peering_connection" "this" {
 ######################################################################
 locals {
   subnets = flatten([
-    for vpcKey, vpcValue in var.VPCs : [
+    for vpcKey, vpcValue in var.vpc : [
       for subnetKey, subnetValue in vpcValue.subnets : {
         vpcKey     = vpcKey
         subnetKey  = subnetKey

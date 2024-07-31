@@ -1,7 +1,7 @@
 ######################################################################
 # NAT variable
 ######################################################################
-variable "NAT" {
+variable "nat" {
   description = "The variables of NAT and NAT Rules"
   type = map(object({
 

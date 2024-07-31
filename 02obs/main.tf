@@ -2,7 +2,7 @@
 # Create OBS - Object Storage Service
 ######################################################################
 resource "huaweicloud_obs_bucket" "this" {
-  for_each      = var.OBS
+  for_each      = var.obs
   bucket        = each.value.bucketName
   storage_class = each.value.storageClass
   acl           = each.value.acl

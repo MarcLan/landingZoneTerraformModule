@@ -2,7 +2,7 @@
 # Create NAT Gateway
 ######################################################################
 resource "huaweicloud_nat_gateway" "this" {
-  for_each              = var.NAT
+  for_each              = var.nat
   vpc_id                = each.value.vpcID
   subnet_id             = each.value.subnetID
   description           = each.value.description
@@ -34,7 +34,7 @@ resource "huaweicloud_nat_snat_rule" "name" {
 ######################################################################
 locals {
   snats = flatten([
-    for natKey, natValue in var.NAT : [
+    for natKey, natValue in var.nat : [
       for snatKey, snatValue in natValue.snats : {
         natKey  = natKey
         snatKey = snatKey

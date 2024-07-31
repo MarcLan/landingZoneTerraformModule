@@ -1,7 +1,7 @@
 ######################################################################
 #  Enterprise Router variables
 ######################################################################
-variable "ERs" {
+variable "er" {
   description = "Create ER instance with Attachments and Route Tables"
 
   type = map(object({

@@ -2,7 +2,7 @@
 # Groups and Streams varialbe in map(object({}))
 ######################################################################
 
-variable "LTSs" {
+variable "lts" {
   description = "lts variables"
 
   type = map(object({

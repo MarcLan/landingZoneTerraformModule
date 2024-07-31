@@ -2,7 +2,7 @@
 # Create EIP
 ######################################################################
 resource "huaweicloud_vpc_eip" "this" {
-  for_each = var.EIP
+  for_each = var.eip
 
   publicip {
     type = each.value.type

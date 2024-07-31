@@ -2,7 +2,7 @@
 # Create KMS
 ######################################################################
 resource "huaweicloud_kms_key" "this" {
-  for_each          = var.KMSs
+  for_each          = var.kms
   key_alias         = each.value.keyAlias
   pending_days      = each.value.keyPendingDays
   is_enabled        = each.value.keyIsEnabled
@@ -27,7 +27,7 @@ resource "huaweicloud_kms_grant" "this" {
 # Flat Variables
 locals {
   kms = flatten([
-    for keyKey, keyValue in var.KMSs : [
+    for keyKey, keyValue in var.kms : [
       for grantKey, grantValue in keyValue.grants : {
         keyKey                 = keyKey
         grantKey               = grantKey

@@ -1,7 +1,7 @@
 ######################################################################
 # VPCs and subnets variable in map(object({}))
 ######################################################################
-variable "VPCs" {
+variable "vpc" {
   description = "VPCs variables"
 
   type = map(object({

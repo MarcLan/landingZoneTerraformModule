@@ -2,7 +2,7 @@
 # Create Enterprise Router instance
 ######################################################################
 resource "huaweicloud_er_instance" "this" {
-  for_each           = var.ERs
+  for_each           = var.er
   name               = each.value.erName
   asn                = each.value.erAsn
   availability_zones = each.value.erAvailabilityZones
@@ -31,7 +31,7 @@ resource "huaweicloud_er_vpc_attachment" "this" {
 # Flat Attachments
 locals {
   attachments = flatten([
-    for erKey, erValue in var.ERs : [
+    for erKey, erValue in var.er : [
       for attachmentKey, attachmentValue in erValue.attachments : {
         erKey          = erKey
         attachmentKey  = attachmentKey

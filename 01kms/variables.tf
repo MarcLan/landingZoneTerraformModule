@@ -1,7 +1,7 @@
 ######################################################################
 # Variables of KMS
 ######################################################################
-variable "KMSs" {
+variable "kms" {
   description = "The variables of multiple KMSs"
 
   type = map(object({
