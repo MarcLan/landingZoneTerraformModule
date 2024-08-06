@@ -1,8 +1,8 @@
 module "er" {
-  source     = "../11 er"
+  source     = "../11er"
   depends_on = [module.vpc]
 
-  ERs = {
+  er = {
     "er1" = {
       erAvailabilityZones = ["ap-southeast-2a", "ap-southeast-2c"]
       erName              = "er-1"
@@ -34,7 +34,7 @@ module "er" {
 }
 
 module "erRouteTables" {
-  source     = "../12 erRouteTable"
+  source     = "../12erRouteTable"
   depends_on = [module.er]
   routeTables = {
 

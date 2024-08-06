@@ -1,7 +1,7 @@
 module "nat" {
-  source        = "../15 nat"
+  source        = "../15nat"
   depends_on = [module.vpc, module.eip]
-  NAT = {
+  nat = {
     "nat1" = {
       name     = "nat-1"
       spec     = "1"

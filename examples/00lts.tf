@@ -1,7 +1,7 @@
 module "lts" {
-  source = "../00 lts"
+  source = "../00lts"
 
-  LTSs = {
+  lts = {
 
     "group1" = {
       groupName = "group-1"

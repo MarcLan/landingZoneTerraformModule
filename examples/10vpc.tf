@@ -1,8 +1,8 @@
 module "vpc" {
-  source     = "../10 vpc"
+  source     = "../10vpc"
   depends_on = [module.lts]
 
-  VPCs = {
+  vpc = {
 
     "vpc1" = {
       vpcName         = "vpc-1"

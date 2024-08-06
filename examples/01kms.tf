@@ -1,8 +1,8 @@
 module "kms" {
-  source = "../01 kms"
-  KMSs = {
-    "kms3" = {
-      keyAlias    = "kms-3"
+  source = "../01kms"
+  kms = {
+    "kms4" = {
+      keyAlias    = "kms-4"
       pendingDays = 7
       grants = {
         grant1 = {

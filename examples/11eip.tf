@@ -1,6 +1,6 @@
 module "eip" {
-  source = "../14 eip"
-  EIP = {
+  source = "../14eip"
+  eip = {
     eip1 = {
       name = "for-snat"
       size = "5"

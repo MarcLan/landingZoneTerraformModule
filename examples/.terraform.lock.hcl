@@ -2,20 +2,20 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/huaweicloud/huaweicloud" {
-  version     = "1.66.3"
-  constraints = ">= 1.60.0, >= 1.66.3"
+  version     = "1.67.0"
+  constraints = "> 1.60.0, >= 1.60.0, > 1.66.3"
   hashes = [
-    "h1:OSBlsaVTu/j2akmAQQedjmBz55EH6TC7Bw7vR80mw5Q=",
-    "zh:0b7f2b9b64b420e333170193e88d63c9714fbf091b736b442537bd95e4c8b62b",
-    "zh:0ea8739d66446ed2970b467deeff972f07e1c116a8dd64d441ad2c6f03287a04",
-    "zh:5ef2b596b4e0b30b2856e2bd96af10e092e3c22d91e6f1ef9409fc8ed53616ba",
-    "zh:6d0a98dd0b525b93de1d8b23edb733de4d8d888164740153890358d821cdc2e5",
-    "zh:6e03965886b2373760f5371205c8d55b22802dd0f5eda9e0eb41c43cd16c8854",
-    "zh:7bd747284115f1b33d878ee3a46e785a8be7be8da7f47ace4178640be866bb7e",
-    "zh:7d43eac9d87e6e36ea4d278505a3aaf409a0af0551332900cc2fc82a062c7eb3",
-    "zh:811bca1ce5b972c32aededc165cc671de5b9c2a2b98914cd3fa14af8e4f69c94",
-    "zh:a1a5e480342e9467ff0677e4a8d61b9d559fe2038d49f9caa18dea0e9a97284e",
-    "zh:bdbe526b8474960587f711c10eef2d572d1f351d4adb7a04a02454c0361e8a35",
-    "zh:de92eb57fba1a869ede55978e44cfdbfaa69b3817df58545706fae66496086c6",
+    "h1:6Bh2AhkTtt1QnPwZhVHKmSrGQIgtC1vggGEYHEsMRj0=",
+    "zh:05e6d990c466e8e50a1ad43fd2fcc17833bbeffe6443eddd9fab055a8ce8b9be",
+    "zh:1b36c88e2b68bfa6520b58f39d75fe791ee6cbcd21205ea1f449802b67074f98",
+    "zh:47e0385f4d711dfdc65589507d9bcbdc72dadd16f7d842c34d1c8dd2a722a524",
+    "zh:59d1b503be0aca0d2e21808b977c84c2f73d70f4c3dc637560abafc56083ba3d",
+    "zh:678534a765d5c104dc2905430a70e04593069053d2e04f60c14e5773a72e4ae5",
+    "zh:702e8edd677ff3a5189efd635295a9955d5ed34af3fefb40656be83852bff8a7",
+    "zh:7c13021a6d6af8fbb839d85b7efc67128bb100a17b90bd9e995cae2bf45f8c69",
+    "zh:7fa30f4ab6c2971ff734232c07bed2ce2f37041248dfcb4ae61afc3679a25e4d",
+    "zh:85626c751ef6d866edbc3c12ce3149dc16dfcf1efeacdaf2b64ef9df33250168",
+    "zh:8d475bf4a19421b2ff114e86203f31342abd263f6f12ff617a9fe4e7be5f5800",
+    "zh:bf8580bde6ed8f1b316f19befe5e3b79d06edcaf57abc6e9d8724746bcc9042a",
   ]
 }
