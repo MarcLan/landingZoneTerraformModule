@@ -8,8 +8,8 @@ module "vpc" {
       vpcName         = "vpc-1"
       vpcCIDR         = "192.168.0.0/16"
       flowLogName     = "flow-log-1"
-      flowLogGroupID  = module.lts.groupIDs["group1"]
-      flowLogStreamID = module.lts.streamIDs["group1.stream1"]
+      flowLogGroupID  = module.lts.groupID["group1"]
+      flowLogStreamID = module.lts.streamID["group1.stream1"]
 
       tags = {
         company     = "awc"
@@ -37,8 +37,8 @@ module "vpc" {
       vpcName         = "vpc-2"
       vpcCIDR         = "172.16.0.0/16"
       flowLogName     = "flow-log-1"
-      flowLogGroupID  = module.lts.groupIDs["group2"]
-      flowLogStreamID = module.lts.streamIDs["group2.stream2"]
+      flowLogGroupID  = module.lts.groupID["group2"]
+      flowLogStreamID = module.lts.streamID["group2.stream2"]
 
       tags = {
         foo = "bar"
