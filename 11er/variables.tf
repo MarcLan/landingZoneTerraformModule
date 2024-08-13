@@ -8,7 +8,7 @@ variable "er" {
 
     erAvailabilityZones = list(string)
     erName              = string
-    erAsn               = string
+    erASN               = string
     erDescription       = optional(string, "Created by Terraform")
     erEnterpriseProject = optional(string, "") # Empty means the Default project
 

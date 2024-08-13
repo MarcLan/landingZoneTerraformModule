@@ -14,7 +14,7 @@ resource "huaweicloud_nat_gateway" "this" {
 }
 
 ######################################################################
-# Create NAT Gateway
+# Create NAT Gateway rules
 ######################################################################
 resource "huaweicloud_nat_snat_rule" "name" {
   for_each = {

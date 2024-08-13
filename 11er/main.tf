@@ -4,7 +4,7 @@
 resource "huaweicloud_er_instance" "this" {
   for_each           = var.er
   name               = each.value.erName
-  asn                = each.value.erAsn
+  asn                = each.value.erASN
   availability_zones = each.value.erAvailabilityZones
   description        = "Created by Terraform"
 }

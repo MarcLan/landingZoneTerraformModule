@@ -1,7 +1,7 @@
 ######################################################################
 # Out put VPCs IDs for other resources
 ###################################################################### 
-output "vpcIDs" {
+output "vpcID" {
   description = "Out put VPCs IDs for other resources"
   value = {
     for k, v in huaweicloud_vpc.this : k => v.id
@@ -15,14 +15,14 @@ output "vpcCIDR" {
   }
 }
 
-output "subnetIDs" {
+output "subnetID" {
   description = "Out put subnets IDs for other resources"
   value = {
     for k, v in huaweicloud_vpc_subnet.this : k => v.id
   }
 }
 
-output "vpcPeeringIDs" {
+output "vpcPeeringID" {
   description = "Out put VPC Peering IDs for other resources"
   value = {
     for k, v in huaweicloud_vpc_peering_connection.this : k => v.id
