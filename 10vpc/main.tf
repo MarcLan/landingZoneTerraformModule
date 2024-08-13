@@ -13,6 +13,7 @@ resource "huaweicloud_vpc" "this" {
 # Create multiple Subnets with a specific VPC
 ######################################################################
 resource "huaweicloud_vpc_subnet" "this" {
+  depends_on = [ huaweicloud_vpc.this ]
   for_each = {
     for subnetValue in local.subnets : "${subnetValue.vpcKey}.${subnetValue.subnetKey}" => subnetValue
   }
@@ -26,6 +27,7 @@ resource "huaweicloud_vpc_subnet" "this" {
 # Create multiple VPC Flow Logs in VPC
 ######################################################################
 resource "huaweicloud_vpc_flow_log" "this" {
+  depends_on = [ huaweicloud_vpc.this ]
   for_each      = var.vpc
   name          = each.value.flowLogType
   resource_id   = huaweicloud_vpc.this[each.key].id

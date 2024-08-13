@@ -9,6 +9,7 @@ resource "huaweicloud_lts_group" "this" {
 }
 
 resource "huaweicloud_lts_stream" "this" {
+  depends_on = [huaweicloud_lts_group.this]
   for_each = {
     for streamValue in local.lts : "${streamValue.groupKey}.${streamValue.streamKey}" => streamValue
   }
