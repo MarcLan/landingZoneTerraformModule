@@ -1,9 +1,9 @@
 ######################################################################
-# Output KMSs IDs
+# Out put SMN id
 ###################################################################### 
-output "id" {
-  description = "Output KMSs IDs"
+output "urn" {
+  description = "Out put SMN id"
   value = {
-    for k, v in huaweicloud_kms_key.this : k => v.id
+    for k, v in huaweicloud_smn_topic.this : k => v.topic_urn
   }
 }

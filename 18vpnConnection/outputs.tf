@@ -1,9 +1,9 @@
 ######################################################################
-# Output OBS bucket
+# output VPN Connection ID
 ######################################################################
-output "bucket" {
-  description = "Output OBS bucket"
+output "vpnConnectionID" {
+  description = "Output VPN Connection id"
   value = {
-    for k, v in huaweicloud_obs_bucket.this : k => v.bucket
+    for k, v in huaweicloud_vpn_connection.this : k => v.id
   }
 }

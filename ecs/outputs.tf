@@ -1,9 +1,9 @@
 ######################################################################
-# Output OBS bucket
+# output ECS id
 ######################################################################
-output "bucket" {
-  description = "Output OBS bucket"
+output "id" {
+  description = "Output ECS id"
   value = {
-    for k, v in huaweicloud_obs_bucket.this : k => v.bucket
+    for k, v in huaweicloud_compute_instance.this : k => v.id
   }
 }

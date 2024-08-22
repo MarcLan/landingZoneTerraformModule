@@ -30,7 +30,7 @@ resource "huaweicloud_nat_snat_rule" "name" {
 }
 
 ######################################################################
-# Flat variables EIP
+# Flat variables nat
 ######################################################################
 locals {
   snats = flatten([

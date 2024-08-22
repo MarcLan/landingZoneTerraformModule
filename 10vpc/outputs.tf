@@ -22,6 +22,13 @@ output "subnetID" {
   }
 }
 
+output "ipv4SubnetID" {
+  description = "Out put subnets IDs for other resources"
+  value = {
+    for k, v in huaweicloud_vpc_subnet.this : k => v.ipv4_subnet_id
+  }
+}
+
 output "vpcPeeringID" {
   description = "Out put VPC Peering IDs for other resources"
   value = {
