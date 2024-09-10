@@ -16,7 +16,7 @@ variable "cts" {
     tags                = optional(map(any))
 
     # notificationName = optional(string, null)
-    # operationType    = optional(string, "complete") # complete, customized
+    # operationType    = optional(string, "complete") # comp
     # smnTopic         = optional(string, null)
 
     # operations = map(object({

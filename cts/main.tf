@@ -14,24 +14,3 @@ resource "huaweicloud_cts_tracker" "this" {
   enabled              = each.value.enabled
   tags                 = {}
 }
-
-
-
-#   operation_users {
-#     group = each.value.operationUsersGroup
-#     users = each.value.operationUsers
-#   }
-
-
-# locals {
-#   cts = flatten([
-#     for groupKey, groupValue in var.cts : [
-#       for streamKey, streamValue in groupValue.streams : {
-#         groupKey   = groupKey
-#         streamKey  = streamKey
-#         groupID    = huaweicloud_lts_group.this[groupKey].id
-#         streamName = streamValue.streamName
-#       }
-#     ]
-#   ])
-# }
