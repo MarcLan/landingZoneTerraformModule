@@ -4,7 +4,6 @@
 
 variable "obs" {
   description = "obs variables"
-
   type = map(object({
 
     region     = optional(string, null)
@@ -15,13 +14,23 @@ variable "obs" {
     keyType    = optional(string, "kms") # kms, AES256
     kmsKeyID   = optional(string, "")
 
-
-    # accountPermission = object({
-    #   accessToBucket = list(string)
-    #   accessToACL    = list(string)
-    #   accountID      = string
-    # })
+    # accountPermission = map(object({
+    #   accessToBucket = optional(list(string))
+    #   accessToACL    = optional(list(string))
+    #   accountID      = optional(string, null)
+    # }))
 
   }))
 }
+
+# variable "acl" {
+#   type = map(object({
+#     region = optional(string, null)
+#     # bucket         = optional(string, null)
+#     accessToBucket = optional(list(string))
+#     accessToACL    = optional(list(string))
+#     accountID      = optional(string, null)
+#   }))
+# }
+
 

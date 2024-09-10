@@ -1,10 +1,9 @@
 ######################################################################
-# Output OBS bucket name
+# Out put ELB Listener ID
 ###################################################################### 
-output "groupID" {
-  description = "Output bucket name"
+output "id" {
+  description = "Output ELB listener ID"
   value = {
-    for k, v in huaweicloud_obs_bucket.this : k => v.bucket
+    for k, v in huaweicloud_elb_listener.this : k => v.id
   }
 }
-

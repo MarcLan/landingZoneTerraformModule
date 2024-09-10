@@ -14,9 +14,11 @@ resource "huaweicloud_obs_bucket" "this" {
 
 # resource "huaweicloud_obs_bucket_acl" "this" {
 #   depends_on = [huaweicloud_obs_bucket.this]
+#   #for_each   = var.obs
 #   for_each = {
 #     for aclValue in local.obs : "${aclValue.obsKey}.${aclValue.aclKey}" => aclValue
-#   }
+#   } 
+#   #region = each.value.region
 #   bucket = each.value.bucket
 #   account_permission {
 #     account_id       = each.value.accountID

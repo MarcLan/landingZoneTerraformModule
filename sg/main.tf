@@ -13,15 +13,15 @@ resource "huaweicloud_networking_secgroup_rule" "this" {
     for rule_value in local.sg_rules : "${rule_value.sg_key}.${rule_value.rule_key}" => rule_value
   }
 
-  security_group_id = each.value.sgID
-  direction         = each.value.direction
-  action            = each.value.action
-  ethertype         = each.value.ethertype
-  ports             = each.value.ports
-  protocol          = each.value.protocol
-  priority          = each.value.priority
-  remote_ip_prefix  = each.value.remoteIpPrefix
-  #  remote_address_group_id = each.value.ipGroup
+  security_group_id       = each.value.sgID
+  direction               = each.value.direction
+  action                  = each.value.action
+  ethertype               = each.value.ethertype
+  ports                   = each.value.ports
+  protocol                = each.value.protocol
+  priority                = each.value.priority
+  remote_ip_prefix        = each.value.remoteIpPrefix
+  remote_address_group_id = each.value.ipGroupID
 
 }
 
@@ -43,6 +43,7 @@ locals {
         protocol       = rule_value.protocol
         portRangeMin   = rule_value.portRangeMin
         protRangeMax   = rule_value.protRangeMax
+        ipGroupID      = rule_value.ipGroupID
 
         # ipGroupName = rule_value.ipGroupName
         # addresses   = rule_value.addresses

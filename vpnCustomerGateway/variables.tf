@@ -6,8 +6,8 @@ variable "vpnCustomerGateway" {
   type = map(object({
     region          = optional(string, null)
     name            = string
-    identifierType  = string # IP or fqdn
-    identifierValue = string # IP cidr
+    identifierType  = optional(string, null) # IP or fqdn
+    identifierValue = optional(string, null) # IP cidr
     asn             = string
     tags            = optional(map(any))
   }))

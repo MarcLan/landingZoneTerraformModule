@@ -15,6 +15,7 @@ variable "er" {
     enableDefaultAssociation    = optional(bool, false)
     enableDefaultPropagation    = optional(bool, false)
     autoAcceptSharedAttachments = optional(bool, false)
+    #autoCreateVpcRoutes         = optional(bool, false)
 
     attachments = optional(map(object({
       attachmentName        = string

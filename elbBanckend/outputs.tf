@@ -1,9 +1,9 @@
 ######################################################################
-# Output OBS bucket
+# Outputs
 ######################################################################
-output "bucket" {
-  description = "Output OBS bucket"
+output "id" {
+  description = "Output ELB Backend Server Group ID"
   value = {
-    for k, v in huaweicloud_obs_bucket.this : k => v.bucket
+    for k, v in huaweicloud_elb_pool.this : k => v.id
   }
 }

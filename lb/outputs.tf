@@ -1,10 +1,9 @@
 ######################################################################
-# Output OBS bucket name
+# Out put Shared ELB ID
 ###################################################################### 
-output "groupID" {
-  description = "Output bucket name"
+output "id" {
+  description = "Output Shared ELB ID"
   value = {
-    for k, v in huaweicloud_obs_bucket.this : k => v.bucket
+    for k, v in huaweicloud_lb_loadbalancer.this : k => v.id
   }
 }
-

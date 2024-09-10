@@ -5,8 +5,8 @@ variable "ecs" {
   type = map(object({
     region           = optional(string, null)
     name             = string
-    imageID          = string
-    flavorID         = string
+    image          = string
+    flavor         = string
     securityGroupIDs = list(string)
     tags             = optional(map(any))
 

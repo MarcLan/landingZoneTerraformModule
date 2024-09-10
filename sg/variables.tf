@@ -21,7 +21,7 @@ variable "sg" {
       protocol       = optional(string, null)
       portRangeMin   = optional(string, null)
       protRangeMax   = optional(string, null)
-      ipGroupName    = optional(string, null)
+      ipGroupID      = optional(string, null)
       addresses      = optional(list(string))
 
     }))

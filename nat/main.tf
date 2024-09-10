@@ -5,7 +5,7 @@ resource "huaweicloud_nat_gateway" "this" {
   for_each              = var.nat
   vpc_id                = each.value.vpcID
   subnet_id             = each.value.subnetID
-  description           = each.value.description
+  #description           = each.value.description
   region                = each.value.region
   name                  = each.value.name
   spec                  = each.value.spec
@@ -16,7 +16,7 @@ resource "huaweicloud_nat_gateway" "this" {
 ######################################################################
 # Create NAT Gateway rules
 ######################################################################
-resource "huaweicloud_nat_snat_rule" "name" {
+resource "huaweicloud_nat_snat_rule" "this" {
   for_each = {
     for snatValue in local.snats : "${snatValue.natKey}.${snatValue.snatKey}" => snatValue
   }
@@ -26,7 +26,7 @@ resource "huaweicloud_nat_snat_rule" "name" {
   subnet_id      = each.value.subnetID
   cidr           = each.value.cidr
   floating_ip_id = each.value.eipID
-  description    = each.value.description
+  #description    = each.value.description
 }
 
 ######################################################################

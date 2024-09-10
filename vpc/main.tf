@@ -6,14 +6,14 @@ resource "huaweicloud_vpc" "this" {
   name                  = each.value.vpcName
   cidr                  = each.value.vpcCIDR
   enterprise_project_id = each.value.vpcEnterpriseProject
-  tags = each.value.tags
+  tags                  = each.value.tags
 }
 
 ######################################################################
 # Create multiple Subnets with a specific VPC
 ######################################################################
 resource "huaweicloud_vpc_subnet" "this" {
-  depends_on = [ huaweicloud_vpc.this ]
+  depends_on = [huaweicloud_vpc.this]
   for_each = {
     for subnetValue in local.subnets : "${subnetValue.vpcKey}.${subnetValue.subnetKey}" => subnetValue
   }
@@ -27,9 +27,9 @@ resource "huaweicloud_vpc_subnet" "this" {
 # Create multiple VPC Flow Logs in VPC
 ######################################################################
 resource "huaweicloud_vpc_flow_log" "this" {
-  depends_on = [ huaweicloud_vpc.this ]
+  depends_on    = [huaweicloud_vpc.this]
   for_each      = var.vpc
-  name          = each.value.flowLogType
+  name          = each.value.flowLogName
   resource_id   = huaweicloud_vpc.this[each.key].id
   resource_type = each.value.flowLogType
   log_group_id  = each.value.flowLogGroupID
@@ -54,8 +54,8 @@ locals {
   subnets = flatten([
     for vpcKey, vpcValue in var.vpc : [
       for subnetKey, subnetValue in vpcValue.subnets : {
-        vpcKey     = vpcKey
-        subnetKey  = subnetKey
+        vpcKey    = vpcKey
+        subnetKey = subnetKey
         vpcID      = huaweicloud_vpc.this[vpcKey].id
         subnetCIDR = subnetValue.subnetCIDR
         subnetName = subnetValue.subnetName

@@ -1,5 +1,5 @@
 ######################################################################
-# Get the terrform version, no need to change the code here
+# Get the terrform version and huaweicloud provider
 ######################################################################
 terraform {
   required_version = ">1.3.0"

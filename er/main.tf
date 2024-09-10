@@ -2,11 +2,12 @@
 # Create Enterprise Router instance
 ######################################################################
 resource "huaweicloud_er_instance" "this" {
-  for_each           = var.er
-  name               = each.value.erName
-  asn                = each.value.erASN
-  availability_zones = each.value.erAvailabilityZones
-  description        = "Created by Terraform"
+  for_each                       = var.er
+  name                           = each.value.erName
+  asn                            = each.value.erASN
+  availability_zones             = each.value.erAvailabilityZones
+  auto_accept_shared_attachments = true
+  #description        = "VPC attachment created by terraform"
 }
 
 ######################################################################
@@ -20,8 +21,8 @@ resource "huaweicloud_er_vpc_attachment" "this" {
   instance_id            = each.value.erID
   vpc_id                 = each.value.vpcID
   subnet_id              = each.value.subnetID
-  auto_create_vpc_routes = true
-  description            = "Created by Terraform"
+  auto_create_vpc_routes = false
+  description            = "VPC attachment created by terraform"
 }
 
 

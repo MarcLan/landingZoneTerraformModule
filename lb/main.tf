@@ -1,5 +1,5 @@
 ######################################################################
-# Create ELB - Elastic Loadbalance
+# Create ELB - Elastic Load Balance
 ######################################################################
 resource "huaweicloud_lb_loadbalancer" "this" {
   for_each              = var.elb
@@ -11,3 +11,4 @@ resource "huaweicloud_lb_loadbalancer" "this" {
   tags                  = each.value.tags
   enterprise_project_id = each.value.enterpriseProjectID
 }
+
