@@ -29,7 +29,7 @@ variable "kms" {
       # encrypt-datakey, decrypt-datakey, describe-key, create-grant, 
       # retire-grant, encrypt-data, decrypt-data
 
-      grantType = optional(string, "domain")
+      grantType = optional(string, "user")
       #The options are: user, domain. The default value is use
 
       grantRetiringPrincipal = optional(string, "")

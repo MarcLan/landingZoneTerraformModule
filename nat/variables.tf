@@ -27,7 +27,7 @@ variable "nat" {
       cidr         = optional(string, null)
       region       = optional(string, "ap-southeast-2")
       natGatewayID = optional(string, "")
-      description  = optional(string, "Created by Terraform")
+      description  = optional(string, "createdByTerraform")
     }))
 
   }))

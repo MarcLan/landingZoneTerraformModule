@@ -2,9 +2,9 @@
 # Create NAT Gateway
 ######################################################################
 resource "huaweicloud_nat_gateway" "this" {
-  for_each              = var.nat
-  vpc_id                = each.value.vpcID
-  subnet_id             = each.value.subnetID
+  for_each  = var.nat
+  vpc_id    = each.value.vpcID
+  subnet_id = each.value.subnetID
   #description           = each.value.description
   region                = each.value.region
   name                  = each.value.name
@@ -26,7 +26,7 @@ resource "huaweicloud_nat_snat_rule" "this" {
   subnet_id      = each.value.subnetID
   cidr           = each.value.cidr
   floating_ip_id = each.value.eipID
-  #description    = each.value.description
+  description    = each.value.description
 }
 
 ######################################################################
@@ -36,9 +36,8 @@ locals {
   snats = flatten([
     for natKey, natValue in var.nat : [
       for snatKey, snatValue in natValue.snats : {
-        natKey  = natKey
-        snatKey = snatKey
-
+        natKey      = natKey
+        snatKey     = snatKey
         natID       = huaweicloud_nat_gateway.this[natKey].id
         region      = snatValue.region
         sourceType  = snatValue.sourceType
