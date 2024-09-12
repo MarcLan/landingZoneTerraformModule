@@ -81,6 +81,21 @@ Check https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/doc
 
   ###
 
+  Go to `../examples/cfw.tf` to check the simple code to call CFW module
+
+  ```python
+  module "cfw" {
+    source = "../cfw"
+    cfw = {
+      name                               = "cfwTest"
+      flavor                             = "Professional"
+      east_west_firewall_er_id           = ""
+      east_west_firewall_inspection_cidr = ""
+      east_west_firewall_mode            = ""
+    }
+  }
+  
+  ```
 
   
 
@@ -144,15 +159,24 @@ module "cfw" {
   commands will detect it and remind you to do so if necessary.
   ```
 
-- Run `terraform apply`
+- Run `terraform apply` > Enter `Access Key` and `Secret Key`
+
+  ```bash
+  [root@terraformuab examples]# terraform apply
+  var.ak
+    the Access Key of your account
+  #
+    Enter a value:
+  
+  var.sk
+    the Secret Key of your account
+  
+    Enter a value:
+  ```
+
+- If the `Access Key` and `Secret Key` is correct, the actions will be displayed
 
   ```shell
-  [root@terraformuab examples]# terraform apply
-  
-  Terraform used the selected providers to generate the following execution plan. Resource actions are
-  indicated with the following symbols:
-    + create
-  
   Terraform will perform the following actions:
   
     # module.cfw.huaweicloud_cfw_firewall.this will be created
@@ -247,7 +271,9 @@ module "cfw" {
   Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
   ```
 
+- Go to Huawei cloud console to verify whether the CFW is created or not
 
+  
 
 ## To be Done
 
