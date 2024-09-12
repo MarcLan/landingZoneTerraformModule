@@ -10,4 +10,3 @@ variable "sk" {
   type        = string
   description = "the Secret Key of your account"
 }
-
