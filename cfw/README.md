@@ -81,21 +81,6 @@ Check https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/doc
 
   ###
 
-  Go to `../examples/cfw.tf` to check the simple code to call CFW module
-
-  ```python
-  module "cfw" {
-    source = "../cfw"
-    cfw = {
-      name                               = "cfwTest"
-      flavor                             = "Professional"
-      east_west_firewall_er_id           = ""
-      east_west_firewall_inspection_cidr = ""
-      east_west_firewall_mode            = ""
-    }
-  }
-  
-  ```
 
   
 
