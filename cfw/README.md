@@ -174,7 +174,7 @@ module "cfw" {
     Enter a value:
   ```
 
-- If the `Access Key` and `Secret Key` is correct, the actions will be displayed
+- If the `Access Key` and `Secret Key` are correct, the actions will be displayed
 
   ```shell
   Terraform will perform the following actions:
