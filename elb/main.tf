@@ -14,5 +14,6 @@ resource "huaweicloud_elb_loadbalancer" "this" {
   l7_flavor_id      = each.value.l7FlavorID
   backend_subnets   = each.value.backendSubnets
   tags              = each.value.tags
+  cross_vpc_backend = each.value.ipAsBackendServer
   description       = each.value.description
 }

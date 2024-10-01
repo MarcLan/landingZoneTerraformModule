@@ -23,6 +23,7 @@ variable "sg" {
       protRangeMax   = optional(string, null)
       ipGroupID      = optional(string, null)
       addresses      = optional(list(string))
+      remoteGroupID  = optional(string, null)
 
     }))
   }))

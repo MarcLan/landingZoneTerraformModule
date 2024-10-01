@@ -5,10 +5,11 @@ variable "ecs" {
   type = map(object({
     region           = optional(string, null)
     name             = string
-    image          = string
-    flavor         = string
+    image            = string
+    flavor           = string
     securityGroupIDs = list(string)
     tags             = optional(map(any))
+
 
     systemDiskType = string
     /** 
@@ -20,10 +21,13 @@ variable "ecs" {
         SSD2: Extreme SSD V2 type. 
      **/
     systemDiskSize = number
+    kmsSystemDisk  = optional(string, null)
 
-    dataDiskType = optional(string, null)
-    dataDiskSize = optional(number, null)
-
+    dataDisk = optional(object({
+      dataDiskType = string
+      dataDiskSize = number
+      kms          = string
+    }), null)
 
     network = object({
       subnetID  = string
@@ -33,5 +37,31 @@ variable "ecs" {
     })
 
   }))
+
+  default = {
+    example_instance = {
+      region           = null # You can change to a region of your choice
+      name             = null
+      image            = null
+      flavor           = null
+      securityGroupIDs = null
+
+      systemDiskType = null
+      systemDiskSize = null
+      kmsSystemDisk  = null
+
+      dataDisk = {
+        dataDiskType = null
+        dataDiskSize = null
+        kms          = null
+      }
+
+      network = {
+        subnetID  = null
+        privateIP = null
+      }
+    }
+  }
+
 }
 

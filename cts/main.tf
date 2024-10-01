@@ -10,7 +10,5 @@ resource "huaweicloud_cts_tracker" "this" {
   organization_enabled = each.value.organizationEnabled
   validate_file        = each.value.validateFile
   kms_id               = each.value.kmsID
-  compress_type        = each.value.compressType
   enabled              = each.value.enabled
-  tags                 = {}
 }

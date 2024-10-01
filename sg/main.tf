@@ -22,6 +22,7 @@ resource "huaweicloud_networking_secgroup_rule" "this" {
   priority                = each.value.priority
   remote_ip_prefix        = each.value.remoteIpPrefix
   remote_address_group_id = each.value.ipGroupID
+  remote_group_id         = each.value.remoteGroupID
 
 }
 
@@ -44,6 +45,7 @@ locals {
         portRangeMin   = rule_value.portRangeMin
         protRangeMax   = rule_value.protRangeMax
         ipGroupID      = rule_value.ipGroupID
+        remoteGroupID  = rule_value.remoteGroupID
 
         # ipGroupName = rule_value.ipGroupName
         # addresses   = rule_value.addresses

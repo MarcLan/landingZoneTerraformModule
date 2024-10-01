@@ -8,4 +8,5 @@ resource "huaweicloud_lb_listener" "this" {
   loadbalancer_id           = each.value.lbID
   default_tls_container_ref = each.value.certID
   sni_container_refs        = each.value.certSNI
+  default_pool_id           = each.value.backendGroup
 }
