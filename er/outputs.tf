@@ -8,7 +8,7 @@ output "erID" {
   }
 }
 
-output "attachmentsID" {
+output "attachmentID" {
   description = "Output ER Attachments IDs"
   value = {
     for k, v in huaweicloud_er_vpc_attachment.this : k => v.id

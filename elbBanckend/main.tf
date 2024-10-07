@@ -2,12 +2,21 @@
 # Create ELB Listener
 ######################################################################
 resource "huaweicloud_elb_pool" "this" {
+  # lifecycle {
+  #   ignore_changes = [
+  #     persistence,
+  #   ]
+  # }
   for_each        = var.backend
   name            = each.value.name
   protocol        = each.value.protocol
   lb_method       = each.value.method
   loadbalancer_id = each.value.loadbalancerID
   listener_id     = each.value.listenerID
+  persistence {
+    timeout = each.value.persistenceTimeout
+    type    = each.value.persistenceType
+  }
 }
 
 resource "huaweicloud_elb_member" "this" {

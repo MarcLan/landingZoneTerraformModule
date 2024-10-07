@@ -12,10 +12,12 @@ variable "backend" {
     # LEAST_CONNECTIONS: weighted least connections.
     # SOURCE_IP: source IP hash.
     # QUIC_CID: connection ID.
-    type           = optional(string, null) # instance, ip
-    loadbalancerID = optional(string, null)
-    listenerID     = optional(string, null)
-    vpcID          = optional(string, null)
+    type               = optional(string, null) # instance, ip
+    loadbalancerID     = optional(string, null)
+    listenerID         = optional(string, null)
+    vpcID              = optional(string, null)
+    persistenceTimeout = optional(number, 20)
+    persistenceType    = optional(string, "HTTP_COOKIE")
 
     servers = map(object({
       address = string

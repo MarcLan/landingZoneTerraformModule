@@ -10,6 +10,13 @@ resource "huaweicloud_lb_pool" "this" {
   description     = each.value.description
   loadbalancer_id = each.value.lbID
   listener_id     = each.value.listenerID
+
+  persistence {
+    type        = each.value.persistenceType
+    timeout     = each.value.persistenceTimeout
+    cookie_name = each.value.cookieName
+  }
+
 }
 
 resource "huaweicloud_lb_member" "this" {

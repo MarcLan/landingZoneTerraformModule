@@ -11,6 +11,10 @@ variable "backend" {
     lbID        = optional(string, null)
     listenerID  = optional(string, null)
 
+    persistenceType    = optional(string, null)
+    persistenceTimeout = optional(number, null)
+    cookieName         = optional(string, null)
+
 
     servers = map(object({
       address      = string

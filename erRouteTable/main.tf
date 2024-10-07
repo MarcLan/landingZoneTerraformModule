@@ -6,7 +6,7 @@ resource "huaweicloud_er_route_table" "this" {
   for_each    = var.routeTables
   name        = each.value.routeTableName
   instance_id = each.value.erID
-  description = "Route table created by terraform"
+  description = "createdByTerraform"
 }
 
 ######################################################################

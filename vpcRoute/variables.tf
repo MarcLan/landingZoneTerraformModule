@@ -23,6 +23,6 @@ variable "routes" {
     #   **/
     #   description = optional(string, "Created by Terraform")
     nexthop     = string
-    description = optional(string, "Created by Terraform")
+    description = optional(string, "CreatedByTerraform")
   }))
 }

@@ -1,5 +1,5 @@
 ######################################################################
-# Create multiple Routes in each VPC
+# Create multiple Routes
 ######################################################################
 resource "huaweicloud_vpc_route" "this" {
   for_each    = var.routes
@@ -7,4 +7,5 @@ resource "huaweicloud_vpc_route" "this" {
   type        = each.value.type
   nexthop     = each.value.nexthop
   destination = each.value.destination
+  description = each.value.description
 }

@@ -11,6 +11,7 @@ resource "huaweicloud_nat_gateway" "this" {
   spec                  = each.value.spec
   enterprise_project_id = each.value.enterpriseProjectID
   tags                  = each.value.tags
+  description           = "createdByTerraform"
 }
 
 ######################################################################
@@ -26,7 +27,7 @@ resource "huaweicloud_nat_snat_rule" "this" {
   subnet_id      = each.value.subnetID
   cidr           = each.value.cidr
   floating_ip_id = each.value.eipID
-  description    = each.value.description
+  description    = "createdByTerraform"
 }
 
 ######################################################################

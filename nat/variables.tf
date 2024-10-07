@@ -18,7 +18,7 @@ variable "nat" {
     enterpriseProjectID = optional(string, "0")
     tags                = optional(map(any))
     region              = optional(string, "ap-southeast-2")
-    description         = optional(string, "Created by Terraform")
+    description         = optional(string, "CreatedbyTerraform")
 
     snats = map(object({
       sourceType   = string # 0 is VPC scenario, 1 is Direct Connect scenario
